@@ -1,0 +1,80 @@
+body{
+  background: #ffefc7;
+}
+.wrapper{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+h1{
+  text-align: center;
+  padding: 5px;
+  background: aqua;
+}
+ul{
+  text-align: center;
+  padding: 0px;
+}
+li{
+  display: inline-block;
+  border: 1px solid black;
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: #8affff;
+}
+a:link{
+  color:black;
+  text-decoration: none;
+}
+a:visited{
+  color:black;
+  text-decoration:none;
+}
+a:hover, active {
+  background-color: #60f0f0
+}
+#v {
+  visibility:hidden;
+}
+.game{
+  width: 500px;
+  background: black;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.block{
+  display: inline-block;
+  background: crimson;
+  width:105px;
+  height:95px;
+  font-size:75px;
+  border:2px solid darkgoldenrod;
+  text-align:center;
+  margin:5px;
+  vertical-align:center;
+}
+.block button{
+  font-size:60px;
+}
+#1div{visibility:hidden;}
+#2div{visibility:hidden;}
+#3div{visibility:hidden;}
+#4div{visibility:hidden;}
+#5div{visibility:hidden;}
+#6div{visibility:hidden;}
+#7div{visibility:hidden;}
+#8div{visibility:hidden;}
+#9div{visibility:hidden;}
+#10div{visibility:hidden;}
+#11div{visibility:hidden;}
+#12div{visibility:hidden;}
+.tab{
+  width: 100%;
+}
+tab td{
+  border: 1px solid black;
+}
