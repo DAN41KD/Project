@@ -38,8 +38,8 @@ function doTurn(area) {
       setTimeOut(function(){
         close(ltwo2[1],500);
       });
-      document.querySelector('#'+ltwo[0]+'div').style.display = "none";
-      document.querySelector('#'+ltwo[1]+'div').style.display = "none";
+      document.querySelector('#'+ltwo[0]+'div').style.visibility = "hidden";
+      document.querySelector('#'+ltwo[1]+'div').style.visibility = "hidden";
       ltwo = [];
     }
   }
