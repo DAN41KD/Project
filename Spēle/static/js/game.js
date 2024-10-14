@@ -1,51 +1,76 @@
-let ad = window.location.hash;
-ad = decodeURI(ad);
-ad = ad.replace("#", "");
-ad = ad.split(",");
-nm = ad[0];
-const area = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
-const acont = ["🤣", "🙃", "😶", "🤣", "🤌", "👍", "🙀", "🙃", "🤌", "😶", "🙀", "👍"];
-let opa = [];
-let ltwo = [];
-let clicks = 0;
-function doTurn(area) {
-  console.log("Klikšķis uz laukuma"+area);
-  clicks++;
-  let opna = false;
-  if (opa.indexOf(area) == -1){
-    opna = true;
-    console.log("Atvērt jauns laukums");
+//no URL iegūst vārdu un ievieto to virsrakstā
+let adrese = window.location.hash;
+adrese = decodeURI(adrese);
+adrese = adrese.replace('#','');
+adrese = adrese.split(",");
+vards  = adrese[0]
+
+//mainīgie spēles rezultātam
+let laiks = 0 //new Number()
+let klikski = 0
+//masīvi spēles funkcionalitātei
+const laukumi       = ['L01','L02','L03','L04','L05','L06','L07','L08','L09','L10','L11','L12'];
+const laukumiSaturs = ['😀','🤡' ,'😺' ,'🎃','😺' ,'🤖','😀','🎃' ,'🤖' ,'👽','👽' ,'🤡'];
+//vienādie atvērtie laukumi
+let atvertieLaukumi = [] 
+//pēdējie 2 atvēwrtie laukumi
+let pedejieDivi = []
+
+//gājiena veikšana
+function veiktGajienu(laukums)
+{
+  console.log( 'klikskis uz laukuma ' + laukums )
+  klikski++ //kliksi = klikski+1
+  let atvertsJaunsLaukums = false;
+  if( atvertieLaukumi.indexOf(laukums) == -1 )
+  { 
+    atvertsJaunsLaukums = true;
+    console.log("atvērts jauns laukums")
   }
-  if (opna = true){
-    document.querySelector('#'+area+'div').style.visibility = "visible";
-    ltwo.push(area);
+//klikšķis uz laukuma
+  if( atvertsJaunsLaukums )
+  {	
+    document.querySelector('#'+laukums+' div').style.display="block"
+    pedejieDivi.push(laukums)
   }
-  if (ltwo.length == 2){
-    console.log("2 laukumi ir atverti");
-    open1i = area.indexOf(ltwo[0]);
-    open2i = area.indexOf(ltwo[1]);
-    if (acont[open1i] == acont[open2i]){
-      console.log("Atverti divi vienādi laukumi");
-      opa.push(ltwo[0], ltwo[1]);
-      ltwo = [];
+
+  if( pedejieDivi.length == 2 )
+  {
+    console.log('divi laukumi atvērti, pārbaudam vai vai vienādi')
+    atverts1_index = laukumi.indexOf( pedejieDivi[0] );
+    atverts2_index = laukumi.indexOf( pedejieDivi[1] );
+    if( laukumiSaturs[atverts1_index] == laukumiSaturs[atverts2_index] )
+    {
+      console.log('atvērti divi vienādi laukumi')
+      atvertieLaukumi.push(pedejieDivi[0],pedejieDivi[1])
     }
-    else{
-      console.log("Atvērt divi atšķirīgi laukumi");
-      let ltwo2 = ltwo;
-      setTimeOut(function(){
-        close(ltwo2[0],500);
-      });
-      setTimeOut(function(){
-        close(ltwo2[1],500);
-      });
-      document.querySelector('#'+ltwo[0]+'div').style.visibility = "hidden";
-      document.querySelector('#'+ltwo[1]+'div').style.visibility = "hidden";
-      ltwo = [];
+    else
+    {
+      console.log('pēdējie divi nebija vienādi')
+      let pedejieDivi_copy = pedejieDivi
+      setTimeout(function() { pasleptLaukumu(pedejieDivi_copy[0]) }, 500);
+      setTimeout(function() { pasleptLaukumu(pedejieDivi_copy[1]) }, 500);
     }
+    pedejieDivi = []
   }
-  if (area.length == opa.length){
-    console.log("Spēle ir beigusies");
-    alert("Apsveicam! Jūs uzvarējāt! \nKlikšķi:"+clicks+"\nLaiks:"+time);
-    window.location = "score#";
+  //gad visi laukumi ir atvērti
+  if( laukumi.length == atvertieLaukumi.length  )
+  {
+    console.log('visi laukumi atvērti')
+    alert('Apsveicam! \nKlikški:'+klikski+'  \nLaiks:'+laiks+' \n\nTagad vari pievienoties TOPAM');
+    //dati tiek nosūtīti uz top_URL
+    document.location = 'top#'+vards+','+klikski+','+laiks
+  
   }
+}
+function pasleptLaukumu(laukums)
+{
+  document.querySelector('#'+laukums+' div').style.display='none';
+}
+
+
+setInterval(skaititLaiku, 1000);
+function skaititLaiku()
+{
+  laiks++;
 }

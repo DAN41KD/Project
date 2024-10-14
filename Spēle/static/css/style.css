@@ -1,80 +1,59 @@
-body{
-  background: #ffefc7;
-}
-.wrapper{
+.wrapper {
   width: 600px;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px;
+  background: #E8E8E8;
+  padding: 10px;
 }
-h1{
+
+h1 {
   text-align: center;
+  background: #5BBCFF;
   padding: 5px;
-  background: aqua;
 }
-ul{
+
+ul {
   text-align: center;
   padding: 0px;
 }
-li{
+
+li {
   display: inline-block;
-  border: 1px solid black;
-  padding-left: 3px;
-  padding-right: 3px;
-  background-color: #8affff;
 }
-a:link{
-  color:black;
-  text-decoration: none;
+
+.block {
+  display: inline-block;
+  background: crimson;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgb(116,1,1);
+  text-align: center;
+  margin: 5px;
+  font-size: 45px;
+  vertical-align: top;
 }
-a:visited{
-  color:black;
-  text-decoration:none;
-}
-a:hover, active {
-  background-color: #60f0f0
-}
-#v {
-  visibility:hidden;
-}
-.game{
+
+.game {
   width: 500px;
   background: black;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
-.block{
-  display: inline-block;
-  background: crimson;
-  width:105px;
-  height:95px;
-  font-size:75px;
-  border:2px solid darkgoldenrod;
-  text-align:center;
-  margin:5px;
-  vertical-align:center;
+
+.block div {
+  /*visibility: hidden;*/
+  display: none;
 }
-.block button{
-  font-size:60px;
-}
-#1div{visibility:hidden;}
-#2div{visibility:hidden;}
-#3div{visibility:hidden;}
-#4div{visibility:hidden;}
-#5div{visibility:hidden;}
-#6div{visibility:hidden;}
-#7div{visibility:hidden;}
-#8div{visibility:hidden;}
-#9div{visibility:hidden;}
-#10div{visibility:hidden;}
-#11div{visibility:hidden;}
-#12div{visibility:hidden;}
-.tab{
+
+table {
   width: 100%;
 }
-tab td{
-  border: 1px solid black;
+
+table td {
+  border: 1px solid gray;
+}
+
+#jauns {
+  background-color: greenyellow;
 }

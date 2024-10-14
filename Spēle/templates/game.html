@@ -1,62 +1,75 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Game</title>
-    <link rel="stylesheet" href="static/css/style.css">
-  </head>
-  <body>
-    <div class="wrapper">
-      <div class="header">
-        <h1>Game</h1>
-        <ul>
-          <li><a href="/">Sākums</a></li>
-          <li><a href="score">Rezultāts</a></li>
-          <li><a href="about">Par</a></li>
-        </ul>
-      </div>
-      <div class="content">
-        <div class="game">
-          <div class="block">
-            <div id="1div"><button onClick="doTurn(1)">🤣</button></div>
-          </div>
-          <div class="block">
-            <div id="2div"><button onClick="doTurn(2)">🙃</button></div>
-          </div>
-          <div class="block">
-            <div id="3div"><button onClick="doTurn(3)">😶</button></div>
-          </div>
-          <div class="block">
-            <div id="4div"><button onClick="doTurn(4)">🤣</button></div>
-          </div>
-          <div class="block">
-            <div id="5div"><button onClick="doTurn(5)">🤌</button></div>
-          </div>
-          <div class="block">
-            <div id="6div"><button onClick="doTurn(6)">👍</button></div>
-          </div>
-          <div class="block">
-            <div id="7div"><button onClick="doTurn(7)">🙀</button></div>
-          </div>
-          <div class="block">
-            <div id="8div"><button onClick="doTurn(8)">🙃</button></div>
-          </div>
-          <div class="block">
-            <div id="9div"><button onClick="doTurn(9)">🤌</button></div>
-          </div>
-          <div class="block">
-            <div id="10div"><button onClick="doTurn(10)">😶</button></div>
-          </div>
-          <div class="block">
-            <div id="11div"><button onClick="doTurn(11)">🙀</button></div>
-          </div>
-          <div class="block">
-            <div id="12div"><button onClick="doTurn(12)">👍</button></div>
-          </div>
+<head>
+  <meta charset="UTF-8">
+  <link href="static/css/style.css" rel="stylesheet">
+  <title>Atmiņas spēle</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h1>Atmiņas spēle</h1>
+      <ul>
+        <li>
+          <a href="/">Sākums</a>
+        </li>
+        <li>
+          <a href="game">Spēle</a>
+        </li>
+        <li>
+          <a href="top">Tops</a>
+        </li>
+        <li>
+          <a href="about">Par</a>
+        </li>
+      </ul>
+    </div> <!--Beidzas header-->
+    <div class="content">
+      <div class="game">
+        <div class="block" id='L01' onclick="veiktGajienu('L01')">
+          <div>😀</div>
         </div>
-      </div>
-    </div>
-  </body>
-  <script src="/static/js/game.js"></script>
+        <div class="block" id='L02' onclick="veiktGajienu('L02')">
+          <div>🤡</div>
+        </div>
+        <div class="block" id='L03' onclick="veiktGajienu('L03')">
+          <div>😺</div>
+        </div>
+        <div class="block" id='L04' onclick="veiktGajienu('L04')">
+          <div>🎃</div>
+        </div>
+        <div class="block" id='L05' onclick="veiktGajienu('L05')">
+          <div>😺</div>
+        </div>
+        <div class="block" id='L06' onclick="veiktGajienu('L06')">
+          <div>🤖</div>
+        </div>
+        <div class="block" id='L07' onclick="veiktGajienu('L07')">
+          <div>😀</div>
+        </div>
+        <div class="block" id='L08' onclick="veiktGajienu('L08')">
+          <div>🎃</div>
+        </div>
+        <div class="block" id='L09' onclick="veiktGajienu('L09')">
+          <div>🤖</div>
+        </div>
+        <div class="block" id='L10' onclick="veiktGajienu('L10')">
+          <div>👽</div>
+        </div>
+        <div class="block" id='L11' onclick="veiktGajienu('L11')">
+          <div>👽</div>
+        </div>
+        <div class="block" id='L12' onclick="veiktGajienu('L12')">
+          <div>🤡</div>
+        </div>
+        
+
+      </div> <!--aizver game-->
+
+    </div> <!--Beidzas content-->
+
+  </div> <!--Beidzas wrapper-->
+
+<script src="static/js/game.js"></script>
+</body>
 </html>

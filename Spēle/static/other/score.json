@@ -1,0 +1,23 @@
+[
+  {
+    "id":0,
+    "vards": "Juris",
+    "klilski": 47,
+    "laiks": 55,
+    "datums": "2021-12-04"
+  },
+  {
+    "id":1,
+    "vards": "Anna",
+    "klilski": 33,
+    "laiks": 40,
+    "datums": "2021-12-26"
+  },
+  {
+    "id":2,
+    "vards": "Ilze",
+    "klilski": 50,
+    "laiks": 60,
+    "datums": "2022-02-14"
+  }
+]
