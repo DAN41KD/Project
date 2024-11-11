@@ -53,7 +53,7 @@ function veiktGajienu(laukums)
     }
     pedejieDivi = []
   }
-  //gad visi laukumi ir atvērti
+  //kad visi laukumi ir atvērti
   if( laukumi.length == atvertieLaukumi.length  )
   {
     console.log('visi laukumi atvērti')
