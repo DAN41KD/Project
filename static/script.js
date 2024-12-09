@@ -1,19 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const apiURL = "/api/data";
+    const apiUrl = "/api/data";
     const form = document.getElementById("tempForm");
     const tableBody = document.querySelector("#dataTable tbody");
     const avgTempElement = document.getElementById("avgTemp");
-    //Table data load and refresh function 
-    const loadTable = async() => {
-        const response = await fetch(apiURL);
+
+    //F-cija, lai ielādētu datus tabulā un atjaunotu to
+    const loadTable = async () => {
+        const response = await fetch(apiUrl);
         const data = await response.json();
-        //Clear table
+
+        //Notīra tabulu
         tableBody.innerHTML = "";
+
         let totalTemp = 0;
+
         data.forEach(entry => {
-            const avgTem = (entry.min_temp + entry.max_temp) / 2;
-            totalTemp += avgTem;
-            //Make tbody data
+            const avgTemp = (entry.min_temp + entry.max_temp) / 2;
+            totalTemp += avgTemp;
+            //veido datu tabulas tbody
             const row = document.createElement("tr");
             row.innerHTML = `
                 <td>${entry.date}</td>
@@ -22,43 +26,51 @@ document.addEventListener("DOMContentLoaded", () => {
                 <td>${avgTemp.toFixed(2)}</td>
             `;
             tableBody.appendChild(row);
+            
         });
-        //Counts total average temperature
-        const avgTemp = data.lenght > 0 ? totalTemp / data.lenght : 0;
+        //Aprēķina kopējo vidējo temperatūru
+        const avgTemp = data.length > 0 ? totalTemp / data.length : 0;
         avgTempElement.textContent = `Vidējā temperatūra visām dienām: ${avgTemp.toFixed(2)}`;
     };
-    //Data sending form
-    form.addEventListener("submit", async(event) => {
+
+    //Forma datu nosūtīšanai
+    form.addEventListener("submit", async (event) => {
         event.preventDefault();
         const date = document.getElementById("date").value;
-        const min_temp = document.getElementById("min_temp").value;
-        const max_temp = document.getElementById("max_temp").value;
-        //Content check
+        const minTemp = document.getElementById("min_temp").value;
+        const maxTemp = document.getElementById("max_temp").value;
+        //Pārbauda vai visi lauku aizpildīti
         if (!date || !minTemp || !maxTemp) {
-            alert("Visi lauki ir obligātie")
+            alert("Visi lauki ir obligāti!");
             return;
         }
+
         const payload = {
             date: date,
-            minTemp: parseFloat(min_temp),
-            maxTemp: parseFloat(max_temp),
+            min_temp: parseFloat(minTemp),
+            max_temp: parseFloat(maxTemp),
         };
-        //Data giving to JSON
-        const response = await fetch(apiURL, {
+        //Datu nodošana Json
+        const response = await fetch(apiUrl, {
             method: "POST",
             headers: {
-                "Content-type": "application/json",
+                "Content-Type": "application/json",
             },
             body: JSON.stringify(payload),
-        });
-        //Path check
+        }); //BUGTālāk viss -1 atkāpe
+        //Pārbauda vai uz tabulu aiziet dati
         if (response.ok) {
             form.reset();
             loadTable();
         } else {
-            const erR = await response.json();
-            alert(erR.error || "Kļūda saglabājot datus!")
-        };
+            const error = await response.json();
+            alert(error.error || "Kļūda saglabājot datus!");                
+        }
     });
+    //Ielādēt tabulu
     loadTable();
+
+    //BUG - liekais "});"
+
+
 });
