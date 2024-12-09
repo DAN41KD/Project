@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", async(event) => {
         event.preventDefault();
         const date = document.getElementById("date").value;
-        const minTemp = document.getElementById("minTemp").value;
-        const maxTemp = document.getElementById("maxTemp").value;
+        const min_temp = document.getElementById("min_temp").value;
+        const max_temp = document.getElementById("max_temp").value;
         //Content check
         if (!date || !minTemp || !maxTemp) {
             alert("Visi lauki ir obligātie")
@@ -40,8 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         const payload = {
             date: date,
-            minTemp: parseFloat(minTemp),
-            maxTemp: parseFloat(maxTemp),
+            minTemp: parseFloat(min_temp),
+            maxTemp: parseFloat(max_temp),
         };
         //Data giving to JSON
         const response = await fetch(apiURL, {

@@ -28,8 +28,8 @@ def get_data():
 def add_data():
     request_data = request.json
     date = request_data.get("date")
-    min_temp = request_data.get("minTemp")
-    max_temp = request_data.get("maxTemp")
+    min_temp = request_data.get("min_temp")
+    max_temp = request_data.get("max_temp")
     if not date or min_temp is None or max_temp is None:
         return jsonify({"error": "Visi lauki ir obligāti!"}), 400
     try:
@@ -39,7 +39,7 @@ def add_data():
         return jsonify({"error": "temperatūrai jābūt skaitlim!"}), 400
 #Data save
     data = load_data()
-    data.append({"date": date, "minTemp": min_temp, "maxTemp": max_temp})
+    data.append({"date": date, "min_temp": min_temp, "max_temp": max_temp})
     save_data(data)
     return jsonify({"message": "Dati veiksmīgi saglabāti!"}), 201
 
