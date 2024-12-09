@@ -1,17 +1,7 @@
 [
     {
-        "date": "2024-12-19",
-        "minTemp": 12.0,
-        "maxTemp": 23.0
-    },
-    {
         "date": "2024-12-05",
-        "minTemp": 12.0,
-        "maxTemp": 34.0
-    },
-    {
-        "date": "2024-12-19",
-        "minTemp": 12.0,
-        "maxTemp": 23.0
+        "min_temp": 12.0,
+        "max_temp": 33.0
     }
 ]
