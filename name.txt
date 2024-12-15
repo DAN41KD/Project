@@ -1,0 +1,5 @@
+   {
+      "vards": eweff
+      "klikski": 34
+      "laiks": 256
+   }
