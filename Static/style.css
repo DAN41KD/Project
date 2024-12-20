@@ -2,21 +2,43 @@
 body {
     display: flex;
     flex-direction: column;
-    padding: 20%;
-    background-color: ;
+    margin: auto;
+    background-color: #895746;
 }
-header {
-    line-break: auto;
+div {
+    background-color: #eeb39e;
+    width: 70%;
+}
+label {
+    font-weight: bold;
+    color: #a1574d;
 }
 input {
     text-align: center;
     font-style: italic;
 }
 button {
-    border: 2px;
-    border-radius: 2px;
+    border: 3px;
+    border-color: #123524;
+    border-radius: 3px;
+    background-color: #eeb39e;
+}
+button:hover {
+    background-color: #9fd5c5;
+}
+h1 {
+    font-weight: bolder;
+    color: #a1574d;
+}
+h2 {
+    font-weight: bold;
+    color: #895746;
+}
+th {
+    color: #895746;
 }
 
 #avgTemp {
     font-style: italic;
+    color: ;
 }
