@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    <header>
+    <div>
         <h1>Temperatūras ieraksti</h1>
         <form id="tempForm">
             <label for="date">Datums:</label>
@@ -18,26 +18,24 @@
                 <input type="number" step="0.1" id="max_temp" required>
             <button type="submit">Pievienot</button>      
         </form>
-    </header>
+    </div>
     
     <div>
         <h2>Temperatūru saraksts</h2>
-        <div id="table">
-            <table id="dataTable">
-            <thead>
-                <tr>
-                    <th>Datums</th>
-                    <th>Mazākā temperatūra</th>
-                    <th>Lielākā temperatūra</th>
-                    <th>Vidējā temperatūra</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!--JavaScript te veidos tabulas rindas-->
-            </tbody>
-            </table>
-            <p id="avgTemp">Vidējā temperatūra visām dienām:</p>
-        </div>
+        <table id="dataTable">
+        <thead>
+            <tr>
+                <th>Datums</th>
+                <th>Mazākā temperatūra</th>
+                <th>Lielākā temperatūra</th>
+                <th>Vidējā temperatūra</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--JavaScript te veidos tabulas rindas-->
+        </tbody>
+        </table>
+        <p id="avgTemp">Vidējā temperatūra visām dienām:</p>
     </div>
 
     <script src="/static/script.js"></script>
@@ -48,4 +46,4 @@
 </body>
 
 
-</html>
+    </html>
