@@ -2,43 +2,45 @@
 body {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    background-color: #895746;
-}
-div {
-    background-color: #eeb39e;
-    width: 70%;
-}
-label {
-    font-weight: bold;
-    color: #a1574d;
+    background-color: #8e9270;
 }
 input {
     text-align: center;
     font-style: italic;
 }
 button {
+    border: 2px;
+    border-radius: 2px;
+    background-color: #96ffea;
+}
+div {
+    margin: auto;
+    background-color: #b1ff99;
+    width: 70%;
     border: 3px;
-    border-color: #123524;
-    border-radius: 3px;
-    background-color: #eeb39e;
+    border-radius: 2px;
+    border-color: #5c4236;
+    text-align: center;
 }
-button:hover {
-    background-color: #9fd5c5;
+
+label {
+    font-weight: bold;
+    color: #6b4d3e;
 }
+
 h1 {
     font-weight: bolder;
-    color: #a1574d;
+    color: #5c4236;
 }
 h2 {
     font-weight: bold;
-    color: #895746;
+    color: #5c4236;
 }
-th {
-    color: #895746;
+table {
+    color: #5c4236;
 }
 
 #avgTemp {
     font-style: italic;
-    color: ;
+    color: #5c4236;
 }
