@@ -2,7 +2,7 @@ import sqlite3
 
 db = sqlite3.connect('dati.db')
 sql = db.cursor()
-sql.execute("""CREATE TABLE IF NOT EXIST score (
+sql.execute("""CREATE TABLE IF NOT EXISTS score (
             id INTEGER NOT NULL UNIQUE,
             vards TEXT,
             klikski INTEGER,
