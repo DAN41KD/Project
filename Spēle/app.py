@@ -34,7 +34,12 @@ def pievienot_rezultatu():
     dati = request.json
     try:
         pievienot(dati)
+        top_5 = sorted(get_topresults(), key=lambda x: (x['klikski'], x['laiks']))[:5]
+        with open('score.json', 'w', encoding='UTF-8') as file:
+            json.dump(top_5, file, ensure_ascii=False, indent=4)
         
+    except Exception:
+        return jsonify({'status': 'error'}), 500
 
 if __name__ == '__main__':
   app.run(debug=True)
